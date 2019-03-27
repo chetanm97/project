@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="alist.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Twitter[Beta_Test]</title>
+    </head>
+    <body>
+    <div class="bg">
+    <p class=invisible>This is just
+    some random text.
+    </p>
+    <div class="x text-center border border-light p-5">
+        <p class="h3">Tweet Retrieval.</p>
+        <button type="button" class="btn btn-outline-primary waves-effect btn-rounded" onclick="location.href='{% url 'script'%}'">Start</button>
+        <button type="button" class="btn btn-outline-danger waves-effect btn-rounded" onclick="location.href='{% url 'stop'%}'">Stop</button>
+    </div>
+    <div>
+    <ul class="list-group">Top Trending Hashtags
+        <li class="list-group-item list-group-item-success">#</li>
+        <li class="list-group-item list-group-item-info">#</li>
+        <li class="list-group-item list-group-item-warning">#</li>
+        <li class="list-group-item list-group-item-danger">#</li>
+    </ul>
+    </div>
+
+    </div>
+    </body>
+</html>
