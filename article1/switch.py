@@ -15,7 +15,7 @@ def pre_class():
 
     auth = OAuthHandler(tw.ckey,tw.csecret)
     auth.set_access_token(tw.akey,tw.asecret)
-    api = tweepy.API(auth)
+    api = tweepy.API(auth,wait_on_rate_limit=True)
     #trends1 = api.trends_place(23424848)
 
 

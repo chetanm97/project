@@ -42,12 +42,17 @@ def classify(text):
             document = ' '.join(document)
             documents.append(document)
 
-        vectorizer = CountVectorizer(max_features=1500, min_df=5, max_df=0.7, stop_words=stopwords.words('english'))
-        text = vectorizer.fit_transform(documents).toarray()
 
-        tfidfconverter = TfidfTransformer()
-        text = tfidfconverter.fit_transform(text).toarray()
+
+
+        with open('vectr', 'rb') as pic:
+            vector=pickle.load(pic)
+            text1=vector.fit_transform(documents).toarray()
+        with open('tfidf', 'rb') as t:
+            tfidfconverter = pickle.load(t)
+            text2 = tfidfconverter.fit_transform(text1).toarray()
+
         with open('text_classifier', 'rb') as training_model:
             model = pickle.load(training_model)
-            y_pred = model.predict(text)
+            y_pred = model.predict(text2)
         return y_pred
