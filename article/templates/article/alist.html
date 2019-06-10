@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+{% comment %} <link rel="stylesheet" href="alist.css"> {% endcomment %}
+
+<html>
+    <style>
+            body, html {
+            height: 100%;
+            }
+        
+            .bg { 
+            /* The image used */
+            background-image: url("bg.jpg");    
+        
+            /* Full height */
+            height: 100%; 
+        
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            }
+
+            .x{
+            top:50vh;
+            }
+    </style>
+    <head>
+        {% block head %}
+        <meta charset="utf-8">
+        <title>Twitter[Beta_Test]</title>
+        {% endblock %}
+    </head>
+    <body class="{% block body_class %}bg4{% endblock %}">
+    {% block body %}
+    <div class="container-fluid">
+    <div class="x text-center border border-light animated bounceInLeft p-5">
+        <p class="h3 text-white">Tweet Retrieval.</p>
+        <button type="button" class="btn btn-outline-primary waves-effect btn-rounded" onclick="location.href='{% url 'script'%}'">Start</button>
+        <button type="button" class="btn btn-outline-danger waves-effect btn-rounded" onclick="location.href='{% url 'stop'%}'">Stop</button>
+    </div>
+    {% comment %} <div>  
+    </div> {% endcomment %}
+
+    </div>
+    {% endblock %}
+    </body>
+</html>
